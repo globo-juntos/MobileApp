@@ -2,7 +2,6 @@ package com.wilderpereira.multiplatform.globojuntos.adapters
 
 
 import android.content.res.ColorStateList
-import android.support.v4.content.ContextCompat
 import android.support.v4.view.ViewCompat
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -10,11 +9,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.ProgressBar
 import android.widget.TextView
 import com.wilderpereira.multiplatform.globojuntos.models.Challenge
 import com.wilderpereira.multiplatform.globojuntos.R
 import com.wilderpereira.multiplatform.globojuntos.extensions.toggleVisibility
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+
+
 
 class ChallengesAdapter(val list: List<Challenge>, val clickListener: (Challenge) -> Unit) : RecyclerView.Adapter<ChallengeViewHolder>() {
 
@@ -100,6 +104,26 @@ class ChallengeViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         activeUsersCountTv?.text = "${challenge.friendsCount} participantes"
 
 
+        if (challenge.id == "1000") {
+            listenToAudience()
+        }
+
+
+    }
+
+    private fun listenToAudience() {
+        val mDatabase = FirebaseDatabase.getInstance().reference.child("votos")
+
+        val activeUsersListener = object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val map = dataSnapshot.value as Map<String, Long>
+                activeUsersCountTv?.text = "${map.values.sum()} participantes"
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+            }
+        }
+        mDatabase.addValueEventListener(activeUsersListener)
     }
 
 
