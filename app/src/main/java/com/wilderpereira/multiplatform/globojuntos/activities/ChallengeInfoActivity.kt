@@ -1,14 +1,15 @@
 package com.wilderpereira.multiplatform.globojuntos.activities
 
+import android.content.Intent
 import android.graphics.PorterDuff
-import android.support.v7.app.AppCompatActivity
+import android.os.Build
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import com.google.firebase.database.*
 import com.wilderpereira.multiplatform.globojuntos.R
 import com.wilderpereira.multiplatform.globojuntos.extensions.toggleVisibility
 import com.wilderpereira.multiplatform.globojuntos.models.Challenge
 import kotlinx.android.synthetic.main.activity_challenge_info.*
-import android.content.Intent
-import com.google.firebase.database.*
 
 
 class ChallengeInfoActivity : AppCompatActivity() {
@@ -20,6 +21,16 @@ class ChallengeInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_challenge_info)
 
+        setSupportActionBar(toolbarr)
+
+        supportActionBar?.setHomeButtonEnabled(true);
+        supportActionBar?.setDisplayHomeAsUpEnabled(true);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            window.statusBarColor = resources.getColor(R.color.colorPrimaryDark, this.theme);
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.statusBarColor = this.resources.getColor(R.color.colorPrimaryDark);
+        }
 
         val bundle: Bundle? = intent.extras
         val challenge = bundle?.getParcelable("question") as Challenge?
