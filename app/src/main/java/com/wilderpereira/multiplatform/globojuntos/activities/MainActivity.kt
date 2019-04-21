@@ -1,6 +1,7 @@
 package com.wilderpereira.multiplatform.globojuntos.activities
 
 import android.content.Intent
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
@@ -27,12 +28,89 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         questionsRv.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = ChallengesAdapter(listOf(
-                    Challenge("","Solta os Cachorros!", "Até na páscoa a gente é MAIS VOCÊ! Qual receitinha você quer ver a Ana Maria Braga fazer para deixar essa data ainda mais deliciosa?", "Ovo de chocolate trufado", "Ovo de chocolate com recheio de limão", Challenge("", "Hm, até eu quero!", "Falando em páscoa, conta pra gente: que tipo de pessoa você é?", "Que gosta de tudo #Formiga", "Prefere chocolate branco ou ao leite", option3 = "Meio amargo ou zero açúcar #TeamFitness"), 365, shareInfo = ShareInfo("Mandou bem!", "Fique ligado, logo depois do intervalo a receita será revelada!", "Aproveita e compartilha com seus amigos. Quem sabe eles não fazem a receita pra você ;)")),
-                    Challenge("","Solta os Cachorros!", "Até na páscoa a gente é MAIS VOCÊ! Qual receitinha você quer ver a Ana Maria Braga fazer para deixar essa data ainda mais deliciosa?", "Ovo de chocolate trufado", "Ovo de chocolate com recheio de limão", Challenge("", "Hm, até eu quero!", "Falando em páscoa, conta pra gente: que tipo de pessoa você é?", "Que gosta de tudo #Formiga", "Prefere chocolate branco ou ao leite", option3 = "Meio amargo ou zero açúcar #TeamFitness"), 365, shareInfo = ShareInfo("Mandou bem!", "Fique ligado, logo depois do intervalo a receita será revelada!", "Aproveita e compartilha com seus amigos. Quem sabe eles não fazem a receita pra você ;)")),
-                    Challenge("","Solta os Cachorros!", "Até na páscoa a gente é MAIS VOCÊ! Qual receitinha você quer ver a Ana Maria Braga fazer para deixar essa data ainda mais deliciosa?", "Ovo de chocolate trufado", "Ovo de chocolate com recheio de limão", Challenge("", "Hm, até eu quero!", "Falando em páscoa, conta pra gente: que tipo de pessoa você é?", "Que gosta de tudo #Formiga", "Prefere chocolate branco ou ao leite", option3 = "Meio amargo ou zero açúcar #TeamFitness"), 365, shareInfo = ShareInfo("Mandou bem!", "Fique ligado, logo depois do intervalo a receita será revelada!", "Aproveita e compartilha com seus amigos. Quem sabe eles não fazem a receita pra você ;)")),
-                    Challenge("","Solta os Cachorros!", "Até na páscoa a gente é MAIS VOCÊ! Qual receitinha você quer ver a Ana Maria Braga fazer para deixar essa data ainda mais deliciosa?", "Ovo de chocolate trufado", "Ovo de chocolate com recheio de limão", Challenge("", "Hm, até eu quero!", "Falando em páscoa, conta pra gente: que tipo de pessoa você é?", "Que gosta de tudo #Formiga", "Prefere chocolate branco ou ao leite", option3 = "Meio amargo ou zero açúcar #TeamFitness"), 365, shareInfo = ShareInfo("Mandou bem!", "Fique ligado, logo depois do intervalo a receita será revelada!", "Aproveita e compartilha com seus amigos. Quem sabe eles não fazem a receita pra você ;)")),
-                    Challenge("","Solta os Cachorros!", "Até na páscoa a gente é MAIS VOCÊ! Qual receitinha você quer ver a Ana Maria Braga fazer para deixar essa data ainda mais deliciosa?", "Ovo de chocolate trufado", "Ovo de chocolate com recheio de limão", Challenge("", "Hm, até eu quero!", "Falando em páscoa, conta pra gente: que tipo de pessoa você é?", "Que gosta de tudo #Formiga", "Prefere chocolate branco ou ao leite", option3 = "Meio amargo ou zero açúcar #TeamFitness"), 365, shareInfo = ShareInfo("Mandou bem!", "Fique ligado, logo depois do intervalo a receita será revelada!", "Aproveita e compartilha com seus amigos. Quem sabe eles não fazem a receita pra você ;)")),
-                    Challenge("","Solta os Cachorros!", "Até na páscoa a gente é MAIS VOCÊ! Qual receitinha você quer ver a Ana Maria Braga fazer para deixar essa data ainda mais deliciosa?", "Ovo de chocolate trufado", "Ovo de chocolate com recheio de limão", Challenge("", "Hm, até eu quero!", "Falando em páscoa, conta pra gente: que tipo de pessoa você é?", "Que gosta de tudo #Formiga", "Prefere chocolate branco ou ao leite", option3 = "Meio amargo ou zero açúcar #TeamFitness"), 365, shareInfo = ShareInfo("Mandou bem!", "Fique ligado, logo depois do intervalo a receita será revelada!", "Aproveita e compartilha com seus amigos. Quem sabe eles não fazem a receita pra você ;)"))
+
+                    Challenge(
+                            "",
+                            "Solta os Cachorros!",
+                            "Até na páscoa a gente é MAIS VOCÊ! " +
+                                    "Qual receitinha você quer ver a Ana Maria Braga fazer para deixar essa data ainda mais deliciosa?",
+                            "AO VIVO",
+                            "Ovo de chocolate trufado",
+                            "Ovo de chocolate com recheio de limão",
+                            Challenge("", "Hm, até eu quero!",
+                                    "Falando em páscoa, conta pra gente: que tipo de pessoa você é?",
+                                    "AO VIVO",
+                                    "Que gosta de tudo #Formiga",
+                                    "Prefere chocolate branco ou ao leite",
+                                    option3 = "Meio amargo ou zero açúcar #TeamFitness"),
+                            365,
+                            shareInfo = ShareInfo("Mandou bem!",
+                                    "Fique ligado, logo depois do intervalo a receita será revelada!",
+                                    "Aproveita e compartilha com seus amigos. Quem sabe eles não fazem a receita pra você ;)"),
+                            image = (getDrawable(R.drawable.anamaria) as BitmapDrawable).bitmap
+                    ),
+
+                    Challenge(
+                            "",
+                            "Aniversário do Bonner",
+                            "Até na páscoa a gente é MAIS VOCÊ! " +
+                                    "Qual receitinha você quer ver a Ana Maria Braga fazer para deixar essa data ainda mais deliciosa?",
+                            "PRÓXIMO",
+                            "Terno azul marinho",
+                            "Terno pretinho básico",
+                            Challenge("", "Boa, agora diz ai",
+                                    "Qual dia você faz aniversário? Assim a gente pode te ajudar a escolher o que assistir nessa data especial ;)",
+                                    "PRÓXIMO",
+                                    "",
+                                    "",
+                                    option3 = ""),
+                            -1,
+                            shareInfo = ShareInfo("Mandou bem!",
+                                    "Fique ligado, logo depois do intervalo a receita será revelada!",
+                                    "Aproveita e compartilha com seus amigos. ;)"),
+                            image = (getDrawable(R.drawable.bonner) as BitmapDrawable).bitmap
+                    ),
+
+                    Challenge(
+                            "",
+                            "Votação encerrada",
+                            "",
+                            "Encerrados",
+                            "Ovo de chocolate trufado",
+                            "",
+                            Challenge("", "",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    option3 = ""),
+                            -1,
+                            shareInfo = ShareInfo("",
+                                    "",
+                                    ""),
+                            image = (getDrawable(R.drawable.anamaria) as BitmapDrawable).bitmap
+                    ),
+
+                    Challenge(
+                            "",
+                            "Parabéns \nVocê votou e ganhou",
+                            "",
+                            "Encerrados",
+                            "Ovo de chocolate trufado",
+                            "",
+                            Challenge("", "",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    option3 = ""),
+                            -1,
+                            shareInfo = ShareInfo("",
+                                    "",
+                                    ""),
+                            image = (getDrawable(R.drawable.thiago) as BitmapDrawable).bitmap
+                    )
+
             )) { challenge -> goToChallengeInfo(challenge)}
         }
 
