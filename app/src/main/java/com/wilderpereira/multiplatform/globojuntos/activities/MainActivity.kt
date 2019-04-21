@@ -27,114 +27,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         questionsRv.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
-            adapter = ChallengesAdapter(listOf(
-
-                    Challenge(
-                            "1000",
-                            "Pitch Globo Juntos!",
-                            "Vamos mudar o futuro da mídia!",
-                            "AO VIVO",
-                            "Final do pitch com Thiago Leifert",
-                            "Final do pitch com Faustão",
-                            Challenge("", "Hm, até eu quero!",
-                                    "Falando em páscoa, conta pra gente: que tipo de pessoa você é?",
-                                    "AO VIVO",
-                                    "Que gosta de tudo #Formiga",
-                                    "Prefere chocolate branco ou ao leite",
-                                    option3 = "Meio amargo ou zero açúcar #TeamFitness"),
-                            365,
-                            shareInfo = ShareInfo("Mandou bem!",
-                                    "Fique ligado, logo depois do intervalo a receita será revelada!",
-                                    "Aproveita e compartilha com seus amigos. Quem sabe eles não fazem a receita pra você ;)"),
-                            image = (getDrawable(R.drawable.anamaria) as BitmapDrawable).bitmap,
-                            color = R.color.pink
-                    ),
-
-                    Challenge(
-                            "1",
-                            "Solta os Cachorros!",
-                            "Até na páscoa a gente é MAIS VOCÊ! " +
-                                    "Qual receitinha você quer ver a Ana Maria Braga fazer para deixar essa data ainda mais deliciosa?",
-                            "AO VIVO",
-                            "Ovo de chocolate trufado",
-                            "Ovo de chocolate com recheio de limão",
-                            Challenge("", "Hm, até eu quero!",
-                                    "Falando em páscoa, conta pra gente: que tipo de pessoa você é?",
-                                    "AO VIVO",
-                                    "Que gosta de tudo #Formiga",
-                                    "Prefere chocolate branco ou ao leite",
-                                    option3 = "Meio amargo ou zero açúcar #TeamFitness"),
-                            365,
-                            shareInfo = ShareInfo("Mandou bem!",
-                                    "Fique ligado, logo depois do intervalo a receita será revelada!",
-                                    "Aproveita e compartilha com seus amigos. Quem sabe eles não fazem a receita pra você ;)"),
-                            image = (getDrawable(R.drawable.anamaria) as BitmapDrawable).bitmap,
-                            color = R.color.pink
-                    ),
-
-                    Challenge(
-                            "2",
-                            "Aniversário do Bonner",
-                            "Até na páscoa a gente é MAIS VOCÊ! " +
-                                    "Qual receitinha você quer ver a Ana Maria Braga fazer para deixar essa data ainda mais deliciosa?",
-                            "PRÓXIMO",
-                            "Terno azul marinho",
-                            "Terno pretinho básico",
-                            Challenge("", "Boa, agora diz ai",
-                                    "Qual dia você faz aniversário? Assim a gente pode te ajudar a escolher o que assistir nessa data especial ;)",
-                                    "PRÓXIMO",
-                                    "",
-                                    "",
-                                    option3 = ""),
-                            -1,
-                            shareInfo = ShareInfo("Mandou bem!",
-                                    "Fique ligado, logo depois do intervalo a receita será revelada!",
-                                    "Aproveita e compartilha com seus amigos. ;)"),
-                            image = (getDrawable(R.drawable.bonner) as BitmapDrawable).bitmap,
-                            color = R.color.blue1
-                    ),
-
-                    Challenge(
-                            "",
-                            "Votação encerrada",
-                            "",
-                            "Encerrados",
-                            "Ovo de chocolate trufado",
-                            "",
-                            Challenge("", "",
-                                    "",
-                                    "",
-                                    "",
-                                    "",
-                                    option3 = ""),
-                            -1,
-                            shareInfo = ShareInfo("",
-                                    "",
-                                    ""),
-                            image = (getDrawable(R.drawable.anamaria) as BitmapDrawable).bitmap
-                    ),
-
-                    Challenge(
-                            "",
-                            "Parabéns \nVocê votou e ganhou",
-                            "",
-                            "Encerrados",
-                            "Ovo de chocolate trufado",
-                            "",
-                            Challenge("", "",
-                                    "",
-                                    "",
-                                    "",
-                                    "",
-                                    option3 = ""),
-                            -1,
-                            shareInfo = ShareInfo("",
-                                    "",
-                                    ""),
-                            image = (getDrawable(R.drawable.thiago) as BitmapDrawable).bitmap
-                    )
-
-            )) { challenge -> goToChallengeInfo(challenge)}
+            adapter = ChallengesAdapter(loadChallenges()) { challenge -> goToChallengeInfo(challenge)}
         }
 
         val toggle = ActionBarDrawerToggle(
@@ -144,6 +37,117 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         nav_view.setNavigationItemSelectedListener(this)
 
+    }
+
+    private fun loadChallenges(): List<Challenge> {
+        return listOf(
+
+                Challenge(
+                        "1000",
+                        "Pitch Globo Juntos!",
+                        "Vamos mudar o futuro da mídia!",
+                        "AO VIVO",
+                        "Final do pitch com Thiago Leifert",
+                        "Final do pitch com Faustão",
+                        Challenge("", "Hm, até eu quero!",
+                                "Falando em páscoa, conta pra gente: que tipo de pessoa você é?",
+                                "AO VIVO",
+                                "Que gosta de tudo #Formiga",
+                                "Prefere chocolate branco ou ao leite",
+                                option3 = "Meio amargo ou zero açúcar #TeamFitness"),
+                        365,
+                        shareInfo = ShareInfo("Mandou bem!",
+                                "Fique ligado, logo depois do intervalo a receita será revelada!",
+                                "Aproveita e compartilha com seus amigos. Quem sabe eles não fazem a receita pra você ;)"),
+                        image = (getDrawable(R.drawable.anamaria) as BitmapDrawable).bitmap,
+                        color = R.color.pink
+                ),
+
+                Challenge(
+                        "1",
+                        "Solta os Cachorros!",
+                        "Até na páscoa a gente é MAIS VOCÊ! " +
+                                "Qual receitinha você quer ver a Ana Maria Braga fazer para deixar essa data ainda mais deliciosa?",
+                        "AO VIVO",
+                        "Ovo de chocolate trufado",
+                        "Ovo de chocolate com recheio de limão",
+                        Challenge("", "Hm, até eu quero!",
+                                "Falando em páscoa, conta pra gente: que tipo de pessoa você é?",
+                                "AO VIVO",
+                                "Que gosta de tudo #Formiga",
+                                "Prefere chocolate branco ou ao leite",
+                                option3 = "Meio amargo ou zero açúcar #TeamFitness"),
+                        365,
+                        shareInfo = ShareInfo("Mandou bem!",
+                                "Fique ligado, logo depois do intervalo a receita será revelada!",
+                                "Aproveita e compartilha com seus amigos. Quem sabe eles não fazem a receita pra você ;)"),
+                        image = (getDrawable(R.drawable.anamaria) as BitmapDrawable).bitmap,
+                        color = R.color.pink
+                ),
+
+                Challenge(
+                        "2",
+                        "Aniversário do Bonner",
+                        "Até na páscoa a gente é MAIS VOCÊ! " +
+                                "Qual receitinha você quer ver a Ana Maria Braga fazer para deixar essa data ainda mais deliciosa?",
+                        "PRÓXIMO",
+                        "Terno azul marinho",
+                        "Terno pretinho básico",
+                        Challenge("", "Boa, agora diz ai",
+                                "Qual dia você faz aniversário? Assim a gente pode te ajudar a escolher o que assistir nessa data especial ;)",
+                                "PRÓXIMO",
+                                "",
+                                "",
+                                option3 = ""),
+                        -1,
+                        shareInfo = ShareInfo("Mandou bem!",
+                                "Fique ligado, logo depois do intervalo a receita será revelada!",
+                                "Aproveita e compartilha com seus amigos. ;)"),
+                        image = (getDrawable(R.drawable.bonner) as BitmapDrawable).bitmap,
+                        color = R.color.blue1
+                ),
+
+                Challenge(
+                        "",
+                        "Votação encerrada",
+                        "",
+                        "Encerrados",
+                        "Ovo de chocolate trufado",
+                        "",
+                        Challenge("", "",
+                                "",
+                                "",
+                                "",
+                                "",
+                                option3 = ""),
+                        -1,
+                        shareInfo = ShareInfo("",
+                                "",
+                                ""),
+                        image = (getDrawable(R.drawable.anamaria) as BitmapDrawable).bitmap
+                ),
+
+                Challenge(
+                        "",
+                        "Parabéns \nVocê votou e ganhou",
+                        "",
+                        "Encerrados",
+                        "Ovo de chocolate trufado",
+                        "",
+                        Challenge("", "",
+                                "",
+                                "",
+                                "",
+                                "",
+                                option3 = ""),
+                        -1,
+                        shareInfo = ShareInfo("",
+                                "",
+                                ""),
+                        image = (getDrawable(R.drawable.thiago) as BitmapDrawable).bitmap
+                )
+
+        )
     }
 
     private fun goToChallengeInfo(challenge: Challenge) {
