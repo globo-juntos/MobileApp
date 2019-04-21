@@ -128,7 +128,9 @@ class ChallengeInfoActivity : AppCompatActivity() {
         }
 
         questionUserDateInfoContinueBtn.setOnClickListener {
-            this.finish()
+            questionUserInfoCardView.toggleVisibility()
+            shareCardView.toggleVisibility()
+            incrementProgress()
         }
 
     }
