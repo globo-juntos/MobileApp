@@ -26,11 +26,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         questionsRv.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = ChallengesAdapter(listOf(
-                    Challenge("","Ana maria braga", "Escolha a receita de hoje!", 365),
-                    Challenge("","Ana maria braga", "Escolha a receita de hoje!", 365),
-                    Challenge("","Ana maria braga", "Escolha a receita de hoje!", 365),
-                    Challenge("","Ana maria braga", "Escolha a receita de hoje!", 365),
-                    Challenge("","Ana maria braga", "Escolha a receita de hoje!", 365)
+                    Challenge("","Solta os Cachorros!", "Até na páscoa a gente é MAIS VOCÊ! Qual receitinha você quer ver a Ana Maria Braga fazer para deixar essa data ainda mais deliciosa?", "Ovo de chocolate trufado", "Ovo de chocolate com recheio de limão", Challenge("", "Hm, até eu quero!", "Falando em páscoa, conta pra gente: que tipo de pessoa você é?", "Que gosta de tudo #Formiga", "Prefere chocolate branco ou ao leite", option3 = "Meio amargo ou zero açúcar #TeamFitness"), 365),
+                    Challenge("","Solta os Cachorros!", "Até na páscoa a gente é MAIS VOCÊ! Qual receitinha você quer ver a Ana Maria Braga fazer para deixar essa data ainda mais deliciosa?", "Ovo de chocolate trufado", "Ovo de chocolate com recheio de limão", Challenge("", "Hm, até eu quero!", "Falando em páscoa, conta pra gente: que tipo de pessoa você é?", "Que gosta de tudo #Formiga", "Prefere chocolate branco ou ao leite", option3 = "Meio amargo ou zero açúcar #TeamFitness"), 365),
+                    Challenge("","Solta os Cachorros!", "Até na páscoa a gente é MAIS VOCÊ! Qual receitinha você quer ver a Ana Maria Braga fazer para deixar essa data ainda mais deliciosa?", "Ovo de chocolate trufado", "Ovo de chocolate com recheio de limão", Challenge("", "Hm, até eu quero!", "Falando em páscoa, conta pra gente: que tipo de pessoa você é?", "Que gosta de tudo #Formiga", "Prefere chocolate branco ou ao leite", option3 = "Meio amargo ou zero açúcar #TeamFitness"), 365),
+                    Challenge("","Solta os Cachorros!", "Até na páscoa a gente é MAIS VOCÊ! Qual receitinha você quer ver a Ana Maria Braga fazer para deixar essa data ainda mais deliciosa?", "Ovo de chocolate trufado", "Ovo de chocolate com recheio de limão", Challenge("", "Hm, até eu quero!", "Falando em páscoa, conta pra gente: que tipo de pessoa você é?", "Que gosta de tudo #Formiga", "Prefere chocolate branco ou ao leite", option3 = "Meio amargo ou zero açúcar #TeamFitness"), 365),
+                    Challenge("","Solta os Cachorros!", "Até na páscoa a gente é MAIS VOCÊ! Qual receitinha você quer ver a Ana Maria Braga fazer para deixar essa data ainda mais deliciosa?", "Ovo de chocolate trufado", "Ovo de chocolate com recheio de limão", Challenge("", "Hm, até eu quero!", "Falando em páscoa, conta pra gente: que tipo de pessoa você é?", "Que gosta de tudo #Formiga", "Prefere chocolate branco ou ao leite", option3 = "Meio amargo ou zero açúcar #TeamFitness"), 365)
             )) { challenge -> goToChallengeInfo(challenge)}
         }
 
@@ -44,7 +44,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun goToChallengeInfo(challenge: Challenge) {
-        startActivity(Intent(this@MainActivity, ChallengeInfoActivity::class.java))
+        val intent = Intent(this@MainActivity, ChallengeInfoActivity::class.java)
+        intent.putExtra("question", challenge)
+        startActivity(intent)
     }
 
     override fun onBackPressed() {
