@@ -9,6 +9,7 @@ import com.google.firebase.database.*
 import com.wilderpereira.multiplatform.globojuntos.R
 import com.wilderpereira.multiplatform.globojuntos.extensions.toggleVisibility
 import com.wilderpereira.multiplatform.globojuntos.models.Challenge
+import com.wilderpereira.multiplatform.globojuntos.repository.saveVote
 import kotlinx.android.synthetic.main.activity_challenge_info.*
 
 
@@ -136,6 +137,7 @@ class ChallengeInfoActivity : AppCompatActivity() {
     }
 
     private fun registerVote(op: Int, id: String?) {
+        saveVote(this)
         if (id == "1000") {
             mDatabase.child("votos").child("op$op").addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onCancelled(p0: DatabaseError?) {

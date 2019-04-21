@@ -4,16 +4,19 @@ import android.content.Intent
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.support.design.widget.NavigationView
+import android.support.design.widget.Snackbar
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
 import com.wilderpereira.multiplatform.globojuntos.models.Challenge
 import com.wilderpereira.multiplatform.globojuntos.R
 import com.wilderpereira.multiplatform.globojuntos.adapters.ChallengesAdapter
 import com.wilderpereira.multiplatform.globojuntos.models.ShareInfo
+import com.wilderpereira.multiplatform.globojuntos.repository.hasAlreadyVoted
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -26,7 +29,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setSupportActionBar(toolbar)
 
         questionsRv.apply {
-            layoutManager = LinearLayoutManager(this@MainActivity)
+            layoutManager = LinearLayoutManager(this@MainActivity) as RecyclerView.LayoutManager?
             adapter = ChallengesAdapter(loadChallenges()) { challenge -> goToChallengeInfo(challenge)}
         }
 
@@ -151,9 +154,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun goToChallengeInfo(challenge: Challenge) {
-        val intent = Intent(this@MainActivity, ChallengeInfoActivity::class.java)
-        intent.putExtra("question", challenge)
-        startActivity(intent)
+
+        if (challenge.id == "1000" && hasAlreadyVoted(this)) {
+            Snackbar.make(findViewById(android.R.id.content), "Você já registrou seu voto!", Snackbar.LENGTH_SHORT)
+                    .show()
+        } else {
+            val intent = Intent(this@MainActivity, ChallengeInfoActivity::class.java)
+            intent.putExtra("question", challenge)
+            startActivity(intent)
+        }
     }
 
     override fun onBackPressed() {
