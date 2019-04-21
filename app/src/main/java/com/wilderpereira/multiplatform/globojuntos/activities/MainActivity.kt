@@ -1,5 +1,6 @@
 package com.wilderpereira.multiplatform.globojuntos.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     Challenge("","Ana maria braga", "Escolha a receita de hoje!", 365),
                     Challenge("","Ana maria braga", "Escolha a receita de hoje!", 365),
                     Challenge("","Ana maria braga", "Escolha a receita de hoje!", 365)
-            ))
+            )) { challenge -> goToChallengeInfo(challenge)}
         }
 
         val toggle = ActionBarDrawerToggle(
@@ -40,6 +41,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         nav_view.setNavigationItemSelectedListener(this)
 
+    }
+
+    private fun goToChallengeInfo(challenge: Challenge) {
+        startActivity(Intent(this@MainActivity, ChallengeInfoActivity::class.java))
     }
 
     override fun onBackPressed() {

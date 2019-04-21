@@ -6,6 +6,7 @@
     android:layout_margin="8dp">
 
     <LinearLayout
+        android:id="@+id/questionContainter"
         android:orientation="vertical"
         android:background="@color/colorPrimary"
         android:layout_width="match_parent"
