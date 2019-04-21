@@ -40,7 +40,7 @@
                         android:id="@+id/challengeImageView"
                         android:layout_width="95dp"
                         android:layout_height="95dp"
-                        android:src="@drawable/anamaria"
+                        android:src="@drawable/bonner"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="38dp"
                         />
@@ -106,15 +106,6 @@
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/questionUserInfoImageView"
-                        android:layout_width="95dp"
-                        android:layout_height="95dp"
-                        android:src="@drawable/anamaria"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="38dp"
-                        />
 
                     <TextView
                         android:id="@+id/questionUserInfoTitleTv"
@@ -189,15 +180,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <ImageView
-                        android:id="@+id/questionUserInfoImageView2"
-                        android:layout_width="95dp"
-                        android:layout_height="95dp"
-                        android:src="@drawable/anamaria"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="38dp"
-                        />
-
                     <TextView
                         android:id="@+id/questionUserDateInfoTitleTv"
                         android:gravity="center"
@@ -222,6 +204,8 @@
 
 
                     <EditText
+                        android:gravity="center"
+                        android:hint="DD/MM/AAAA"
                         android:layout_margin="@dimen/activity_vertical_margin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
@@ -229,7 +213,7 @@
 
                     <Button
                         android:id="@+id/questionUserDateInfoContinueBtn"
-                        android:backgroundTint="@color/colorAccent"
+                        android:backgroundTint="@color/blue1"
                         android:textColor="@android:color/white"
                         android:layout_width="match_parent"
                         android:layout_height="65dp"
@@ -294,7 +278,7 @@
                             android:textStyle="bold"
                             android:textSize="18sp"
                             android:gravity="center"
-                            android:textColor="@color/colorAccent"
+                            android:textColor="@color/darkGrey"
                             android:layout_marginEnd="32dp"
                             android:layout_marginStart="32dp"
                             android:layout_marginTop="8dp"
@@ -343,7 +327,9 @@
                             android:text="Compartilhar"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent" />
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:actionProviderClass=
+                                "android.widget.ShareActionProvider"/>
 
                         <TextView
                             android:id="@+id/closeBtn"

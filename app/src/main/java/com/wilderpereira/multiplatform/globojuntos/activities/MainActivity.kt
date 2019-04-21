@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             adapter = ChallengesAdapter(listOf(
 
                     Challenge(
-                            "",
+                            "1",
                             "Solta os Cachorros!",
                             "Até na páscoa a gente é MAIS VOCÊ! " +
                                     "Qual receitinha você quer ver a Ana Maria Braga fazer para deixar essa data ainda mais deliciosa?",
@@ -47,11 +47,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                             shareInfo = ShareInfo("Mandou bem!",
                                     "Fique ligado, logo depois do intervalo a receita será revelada!",
                                     "Aproveita e compartilha com seus amigos. Quem sabe eles não fazem a receita pra você ;)"),
-                            image = (getDrawable(R.drawable.anamaria) as BitmapDrawable).bitmap
+                            image = (getDrawable(R.drawable.anamaria) as BitmapDrawable).bitmap,
+                            color = R.color.pink
                     ),
 
                     Challenge(
-                            "",
+                            "2",
                             "Aniversário do Bonner",
                             "Até na páscoa a gente é MAIS VOCÊ! " +
                                     "Qual receitinha você quer ver a Ana Maria Braga fazer para deixar essa data ainda mais deliciosa?",
@@ -68,7 +69,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                             shareInfo = ShareInfo("Mandou bem!",
                                     "Fique ligado, logo depois do intervalo a receita será revelada!",
                                     "Aproveita e compartilha com seus amigos. ;)"),
-                            image = (getDrawable(R.drawable.bonner) as BitmapDrawable).bitmap
+                            image = (getDrawable(R.drawable.bonner) as BitmapDrawable).bitmap,
+                            color = R.color.blue1
                     ),
 
                     Challenge(

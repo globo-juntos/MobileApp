@@ -17,7 +17,8 @@ data class Challenge(
         val option3: String? = null,
         val shareInfo: ShareInfo? = null,
         val image: Bitmap? = null,
-        val time: Int = 0
+        val time: Int = 0,
+        val color: Int = 0
 ) : Parcelable
 
 
