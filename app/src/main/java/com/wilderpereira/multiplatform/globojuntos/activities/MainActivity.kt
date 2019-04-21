@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                         "De que forma você quer que terminemos o pitch?",
                         "AO VIVO",
                         "Na piscina",
-                        "No confessionário?",
+                        "No confessionário",
                         Challenge("", "Legal, o que achou da nossa solução?",
                                 "Conte para gente!?",
                                 "AO VIVO",
