@@ -120,11 +120,19 @@ class ChallengeInfoActivity : AppCompatActivity() {
 
         questionUserInfoOption3.setOnClickListener {
             questionUserInfoCardView.toggleVisibility()
-            shareCardView.toggleVisibility()
+            prizeCv.toggleVisibility()
             incrementProgress()
         }
 
         closeBtn.setOnClickListener {
+            this.finish()
+        }
+
+        prizeContinue.setOnClickListener {
+            this.finish()
+        }
+
+        prizeSkip.setOnClickListener {
             this.finish()
         }
 
