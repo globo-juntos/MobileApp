@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "921353111227",
+    "firebase_url": "https://globojuntos.firebaseio.com",
+    "project_id": "globojuntos",
+    "storage_bucket": "globojuntos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921353111227:android:7252106e3a7b865e",
+        "android_client_info": {
+          "package_name": "com.wilderpereira.multiplatform.globojuntos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "921353111227-r7nqnl82n7uanagrruqhb8lbqpni30mk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wilderpereira.multiplatform.globojuntos",
+            "certificate_hash": "46f0590993e1c385da5e6d02e488e70af2410fb7"
+          }
+        },
+        {
+          "client_id": "921353111227-mlkj2fhtnpuunvvugsg4evb5opcd5pg3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCM64KqTat9AH5ZsEJvzJfq0CLmpDg4pUI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "921353111227-mlkj2fhtnpuunvvugsg4evb5opcd5pg3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
