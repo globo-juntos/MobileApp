@@ -30,6 +30,27 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             adapter = ChallengesAdapter(listOf(
 
                     Challenge(
+                            "1000",
+                            "Pitch Globo Juntos!",
+                            "Vamos mudar o futuro da mídia!",
+                            "AO VIVO",
+                            "Final do pitch com Thiago Leifert",
+                            "Final do pitch com Faustão",
+                            Challenge("", "Hm, até eu quero!",
+                                    "Falando em páscoa, conta pra gente: que tipo de pessoa você é?",
+                                    "AO VIVO",
+                                    "Que gosta de tudo #Formiga",
+                                    "Prefere chocolate branco ou ao leite",
+                                    option3 = "Meio amargo ou zero açúcar #TeamFitness"),
+                            365,
+                            shareInfo = ShareInfo("Mandou bem!",
+                                    "Fique ligado, logo depois do intervalo a receita será revelada!",
+                                    "Aproveita e compartilha com seus amigos. Quem sabe eles não fazem a receita pra você ;)"),
+                            image = (getDrawable(R.drawable.anamaria) as BitmapDrawable).bitmap,
+                            color = R.color.pink
+                    ),
+
+                    Challenge(
                             "1",
                             "Solta os Cachorros!",
                             "Até na páscoa a gente é MAIS VOCÊ! " +

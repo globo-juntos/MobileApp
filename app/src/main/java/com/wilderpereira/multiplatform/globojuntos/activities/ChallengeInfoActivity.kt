@@ -8,10 +8,13 @@ import com.wilderpereira.multiplatform.globojuntos.extensions.toggleVisibility
 import com.wilderpereira.multiplatform.globojuntos.models.Challenge
 import kotlinx.android.synthetic.main.activity_challenge_info.*
 import android.content.Intent
-
+import com.google.firebase.database.*
 
 
 class ChallengeInfoActivity : AppCompatActivity() {
+
+    private val mDatabase: DatabaseReference = FirebaseDatabase.getInstance().getReference()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,7 +73,9 @@ class ChallengeInfoActivity : AppCompatActivity() {
         btnOption1.setOnClickListener {
             questionCardView.toggleVisibility()
 
-            if (challenge?.id == "1") {
+            registerVote(op= 1, id= challenge?.id)
+
+            if (challenge?.id == "1" || challenge?.id == "1000") {
                 questionUserInfoCardView.toggleVisibility()
             } else {
                 questionUserDateInfo.toggleVisibility()
@@ -80,7 +85,8 @@ class ChallengeInfoActivity : AppCompatActivity() {
         }
         btnOption2.setOnClickListener {
             questionCardView.toggleVisibility()
-            if (challenge?.id == "1") {
+            registerVote(op= 2, id= challenge?.id)
+            if (challenge?.id == "1" || challenge?.id == "1000") {
                 questionUserInfoCardView.toggleVisibility()
             } else {
                 questionUserDateInfo.toggleVisibility()
@@ -114,6 +120,22 @@ class ChallengeInfoActivity : AppCompatActivity() {
             this.finish()
         }
 
+    }
+
+    private fun registerVote(op: Int, id: String?) {
+        if (id == "1000") {
+            mDatabase.child("votos").child("op$op").addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onCancelled(p0: DatabaseError?) {
+                }
+
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    var value = dataSnapshot.value as Long
+                    value += 1
+                    dataSnapshot.ref.setValue(value)
+                }
+            })
+
+        }
     }
 
     private fun incrementProgress() {
