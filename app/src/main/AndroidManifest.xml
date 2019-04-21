@@ -19,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ChallengeInfoActivity"></activity>
+        <activity android:name=".activities.ChallengeInfoActivity" />
+        <activity android:name=".activities.ShareActivity"></activity>
     </application>
 
 </manifest>

@@ -12,5 +12,10 @@ data class Challenge(
         val option2: String,
         var userInfoQuestion: Challenge? = null,
         var friendsCount: Int? = 0,
-        val option3: String? = null
+        val option3: String? = null,
+        val shareInfo: ShareInfo? = null
 ) : Parcelable
+
+
+@Parcelize
+data class ShareInfo(val title: String, val subtitle: String, val shareText: String) : Parcelable

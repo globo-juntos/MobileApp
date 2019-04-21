@@ -2,12 +2,10 @@ package com.wilderpereira.multiplatform.globojuntos.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import com.wilderpereira.multiplatform.globojuntos.R
 import com.wilderpereira.multiplatform.globojuntos.extensions.toggleVisibility
 import com.wilderpereira.multiplatform.globojuntos.models.Challenge
 import kotlinx.android.synthetic.main.activity_challenge_info.*
-import kotlinx.android.synthetic.main.question_item.*
 
 class ChallengeInfoActivity : AppCompatActivity() {
 
@@ -34,18 +32,51 @@ class ChallengeInfoActivity : AppCompatActivity() {
                     questionUserInfoOption3.toggleVisibility()
                     questionUserInfoOption3.text = option3
                 }
+                this.shareInfo?.apply {
+                    shareTitleTv.text = this.title
+                    shareDescriptionTv.text = this.subtitle
+                    shareDescription2Tv.text = this.shareText
+                }
             }
 
         }
 
-        btnOption1.setOnClickListener { questionClick() }
-        btnOption2.setOnClickListener { questionClick() }
+        btnOption1.setOnClickListener {
+            questionCardView.toggleVisibility()
+            questionUserInfoCardView.toggleVisibility()
+            incrementProgress()
+        }
+        btnOption2.setOnClickListener {
+            questionUserInfoCardView.toggleVisibility()
+            questionUserInfoCardView.toggleVisibility()
+            incrementProgress()
+        }
+
+        questionUserInfoOption1.setOnClickListener {
+            questionUserInfoCardView.toggleVisibility()
+            shareCardView.toggleVisibility()
+            incrementProgress()
+        }
+
+        questionUserInfoOption2.setOnClickListener {
+            questionUserInfoCardView.toggleVisibility()
+            shareCardView.toggleVisibility()
+            incrementProgress()
+        }
+
+        questionUserInfoOption3.setOnClickListener {
+            questionUserInfoCardView.toggleVisibility()
+            shareCardView.toggleVisibility()
+            incrementProgress()
+        }
+
+        closeBtn.setOnClickListener {
+            this.finish()
+        }
 
     }
 
-    private fun questionClick() {
-        questionCardView.toggleVisibility()
-        questionUserInfoCardView.toggleVisibility()
+    private fun incrementProgress() {
         progressBar.progress = progressBar.progress + 1
     }
 }
