@@ -1,15 +1,19 @@
-package com.wilderpereira.multiplatform.globojuntos
+package com.wilderpereira.multiplatform.globojuntos.activities
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
+import com.wilderpereira.multiplatform.globojuntos.models.Challenge
+import com.wilderpereira.multiplatform.globojuntos.R
+import com.wilderpereira.multiplatform.globojuntos.adapters.ChallengesAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -18,9 +22,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+        questionsRv.apply {
+            layoutManager = LinearLayoutManager(this@MainActivity)
+            adapter = ChallengesAdapter(listOf(
+                    Challenge("","Ana maria braga", "Escolha a receita de hoje!", 365),
+                    Challenge("","Ana maria braga", "Escolha a receita de hoje!", 365),
+                    Challenge("","Ana maria braga", "Escolha a receita de hoje!", 365),
+                    Challenge("","Ana maria braga", "Escolha a receita de hoje!", 365),
+                    Challenge("","Ana maria braga", "Escolha a receita de hoje!", 365)
+            ))
         }
 
         val toggle = ActionBarDrawerToggle(
@@ -29,6 +39,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
+
     }
 
     override fun onBackPressed() {
