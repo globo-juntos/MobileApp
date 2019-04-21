@@ -73,7 +73,7 @@ class ChallengeInfoActivity : AppCompatActivity() {
                     questionUserInfoOption3.toggleVisibility()
                     questionUserInfoOption3.text = option3
                 }
-                this.shareInfo?.apply {
+                challenge.shareInfo?.apply {
                     shareTitleTv.text = this.title
                     shareDescriptionTv.text = this.subtitle
                     shareDescription2Tv.text = this.shareText

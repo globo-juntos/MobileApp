@@ -309,7 +309,6 @@
                             android:layout_marginEnd="32dp"
                             android:layout_marginStart="32dp"
                             android:layout_marginTop="8dp"
-                            android:text="Fique ligado, logo depois do intervalo a receita será revelada!"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/shareTitleTv" />
@@ -336,7 +335,6 @@
                             android:layout_marginTop="@dimen/activity_vertical_margin"
                             android:gravity="center"
                             android:textSize="18sp"
-                            android:text="Aproveita e compartilha com seus amigos. Quem sabe eles não fazem a receita pra você ;)"
                             app:layout_constraintBottom_toTopOf="@+id/shareButton"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"

@@ -47,23 +47,22 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                 Challenge(
                         "1000",
-                        "Pitch Globo Juntos!",
-                        "Vamos mudar o futuro da mídia!",
+                        "Pitch Hackathon Globo Juntos!",
+                        "De que forma você quer que terminemos o pitch?",
                         "AO VIVO",
-                        "Final do pitch com Thiago Leifert",
-                        "Final do pitch com Faustão",
-                        Challenge("", "Hm, até eu quero!",
-                                "Falando em páscoa, conta pra gente: que tipo de pessoa você é?",
+                        "Na piscina",
+                        "No confessionário?",
+                        Challenge("", "Legal, o que achou da nossa solução?",
+                                "Conte para gente!?",
                                 "AO VIVO",
-                                "Que gosta de tudo #Formiga",
-                                "Prefere chocolate branco ou ao leite",
-                                option3 = "Meio amargo ou zero açúcar #TeamFitness"),
+                                "Muito boa!",
+                                "Ótima!"),
                         365,
-                        shareInfo = ShareInfo("Mandou bem!",
-                                "Fique ligado, logo depois do intervalo a receita será revelada!",
-                                "Aproveita e compartilha com seus amigos. Quem sabe eles não fazem a receita pra você ;)"),
-                        image = (getDrawable(R.drawable.anamaria) as BitmapDrawable).bitmap,
-                        color = R.color.pink
+                        shareInfo = ShareInfo("Muito obrigado!",
+                                "Fiquem atentos, no final do dia conheceremos os vencedores!",
+                                "Aproveite e continue vendo soluções incríveis ;)"),
+                        image = (getDrawable(R.drawable.grupo) as BitmapDrawable).bitmap,
+                        color = R.color.green
                 ),
 
                 Challenge(
@@ -80,7 +79,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                                 "Que gosta de tudo #Formiga",
                                 "Prefere chocolate branco ou ao leite",
                                 option3 = "Meio amargo ou zero açúcar #TeamFitness"),
-                        365,
+                        4,
                         shareInfo = ShareInfo("Mandou bem!",
                                 "Fique ligado, logo depois do intervalo a receita será revelada!",
                                 "Aproveita e compartilha com seus amigos. Quem sabe eles não fazem a receita pra você ;)"),
@@ -91,8 +90,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 Challenge(
                         "2",
                         "Aniversário do Bonner",
-                        "Até na páscoa a gente é MAIS VOCÊ! " +
-                                "Qual receitinha você quer ver a Ana Maria Braga fazer para deixar essa data ainda mais deliciosa?",
+                        "O JN está em festa! Hoje é aniversário do Bonner e ele está sem tempo de escolher qual terno usar. Ajude a decidir!",
                         "PRÓXIMO",
                         "Terno azul marinho",
                         "Terno pretinho básico",
@@ -104,7 +102,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                                 option3 = ""),
                         -1,
                         shareInfo = ShareInfo("Mandou bem!",
-                                "Fique ligado, logo depois do intervalo a receita será revelada!",
+                                "Fique ligado, logo depois do intervalo a roupa escolhida será revelada!",
                                 "Aproveita e compartilha com seus amigos. ;)"),
                         image = (getDrawable(R.drawable.bonner) as BitmapDrawable).bitmap,
                         color = R.color.blue1
